@@ -1,0 +1,337 @@
+Assignment For Numpy¶
+Difficulty Level Beginner
+
+Import the numpy package under the name np
+import numpy as np
+Create a null vector of size 10
+null_vector =np.zeros(10)
+null_vector
+array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+Create a vector with values ranging from 10 to 49
+values = np.array(range(10,50))
+values
+array([10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+       27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43,
+       44, 45, 46, 47, 48, 49])
+Find the shape of previous array in question 3
+values.shape
+(40,)
+Print the type of the previous array in question 3
+print(type(values))
+<class 'numpy.ndarray'>
+Print the numpy version and the configuration
+print(np.__version__)
+1.19.4
+Print the dimension of the array in question 3
+print(values.ndim)
+1
+Create a boolean array with all the True values
+bool_arr = np.ones(10, dtype=bool)
+bool_arr
+array([ True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True])
+Create a two dimensional array
+array_2D = np.array([[1,2],[3,4]])
+array_2D
+array([[1, 2],
+       [3, 4]])
+Create a three dimensional array
+import random
+array_3D = np.random.randn(3,2,2)
+array_3D
+array([[[ 0.20938908, -0.19379708],
+        [ 0.03019548, -0.55083555]],
+
+       [[-0.80612618,  1.00937604],
+        [ 0.38975206,  0.18675636]],
+
+       [[ 0.6118873 ,  0.16927272],
+        [-0.83557611,  1.4803342 ]]])
+Difficulty Level Easy
+
+Reverse a vector (first element becomes last)
+values =np.arange(1,10)
+values_resv = values[::-1]
+values_resv
+array([9, 8, 7, 6, 5, 4, 3, 2, 1])
+Create a null vector of size 10 but the fifth value which is 1
+null_vector = np.zeros(10)
+null_vector[4] = 1
+null_vector
+array([0., 0., 0., 0., 1., 0., 0., 0., 0., 0.])
+Create a 3x3 identity matrix
+identity_mat = np.identity(3)
+identity_mat
+array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+arr = np.array([1, 2, 3, 4, 5])
+Convert the data type of the given array from int to float
+
+arr = np.array([1, 2, 3, 4, 5])
+arr_float = np.array(arr, dtype='float')
+arr_float
+array([1., 2., 3., 4., 5.])
+arr1 = np.array([[1., 2., 3.],
+
+            [4., 5., 6.]])  
+arr2 = np.array([[0., 4., 1.],
+
+           [7., 2., 12.]])
+Multiply arr1 with arr2
+
+arr1 = np.array([[1., 2., 3.],[4., 5., 6.]])  
+arr2 = np.array([[0., 4., 1.],[7., 2., 12.]])
+arr1 * arr2
+array([[ 0.,  8.,  3.],
+       [28., 10., 72.]])
+arr1 = np.array([[1., 2., 3.],
+
+            [4., 5., 6.]]) 
+arr2 = np.array([[0., 4., 1.],
+
+            [7., 2., 12.]])
+Make an array by comparing both the arrays provided above
+
+arr1 = np.array([[1., 2., 3.],[4., 5., 6.]]) 
+arr2 = np.array([[0., 4., 1.],[7., 2., 6.]])
+arr1 == arr2
+array([[False, False, False],
+       [False, False,  True]])
+Extract all odd numbers from arr with values(0-9)
+arr1 =np.array(range(10)) 
+for i in arr1:
+    if i%2==1:
+        print(i)
+1
+3
+5
+7
+9
+Replace all odd numbers to -1 from previous array
+arr1 =np.array(range(10)) 
+for i in arr1:
+    if i%2==1:
+        print(i)
+        arr1[i] =-1
+print(arr1)
+1
+3
+5
+7
+9
+[ 0 -1  2 -1  4 -1  6 -1  8 -1]
+arr = np.arange(10)
+Replace the values of indexes 5,6,7 and 8 to 12
+
+arr = np.arange(10)
+for i in arr:
+    if i==5 or i==6 or i==7 or i==8:
+        arr[i] = 12
+print(arr)        
+[ 0  1  2  3  4 12 12 12 12  9]
+Create a 2d array with 1 on the border and 0 inside
+arr = np.ones((4,4))
+arr[1:3,1:3]=0
+arr
+array([[1., 1., 1., 1.],
+       [1., 0., 0., 1.],
+       [1., 0., 0., 1.],
+       [1., 1., 1., 1.]])
+Difficulty Level Medium
+
+arr2d = np.array([[1, 2, 3],
+
+            [4, 5, 6], 
+
+            [7, 8, 9]])
+Replace the value 5 to 12
+
+arr2d = np.array([[1, 2, 3],[4, 5, 6], [7, 8, 9]])
+arr2d[1,1] =  12  
+print(arr2d)
+arr2d.ndim 
+[[ 1  2  3]
+ [ 4 12  6]
+ [ 7  8  9]]
+2
+arr3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+Convert all the values of 1st array to 64
+
+arr3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+arr3d[0,:][0,:] = 64
+print(arr3d)
+[[[64 64 64]
+  [ 4  5  6]]
+
+ [[ 7  8  9]
+  [10 11 12]]]
+Make a 2-Dimensional array with values 0-9 and slice out the first 1st 1-D array from it
+arr2d = np.array([[1, 2, 3],[4, 5, 6], [7, 8, 9]])
+arr1d = arr2d[0,:]
+arr1d
+array([1, 2, 3])
+Make a 2-Dimensional array with values 0-9 and slice out the 2nd value from 2nd 1-D array from it
+arr2d = np.array([[1, 2, 3],[4, 5, 6], [7, 8, 9]])
+arr1d = arr2d[1,1]
+arr1d
+5
+Make a 2-Dimensional array with values 0-9 and slice out the third column but only the first two rows
+arr2d = np.array([[1, 2, 3],[4, 5, 6], [7, 8, 9]])
+arr1d = arr2d[0:2,-1]
+arr1d
+array([3, 6])
+Create a 10x10 array with random values and find the minimum and maximum values
+arr10 =np.random.randn(10,10)
+np.min(arr10), np.max(arr10)
+(-2.5448212880455294, 3.087189817726172)
+a = np.array([1,2,3,2,3,4,3,4,5,6]) b = np.array([7,2,10,2,7,4,9,4,9,8])
+Find the common items between a and b
+
+a = np.array([1,2,3,2,3,4,3,4,5,6])
+b = np.array([7,2,10,2,7,4,9,4,9,8])
+​
+np.intersect1d(a,b)
+array([2, 4])
+a = np.array([1,2,3,2,3,4,3,4,5,6]) b = np.array([7,2,10,2,7,4,9,4,9,8])
+Find the positions where elements of a and b match
+
+a = np.array([1,2,3,2,3,4,3,4,5,6])
+b = np.array([7,2,10,2,7,4,9,4,9,8])
+​
+np.searchsorted(a, np.intersect1d(a, b))
+array([1, 5], dtype=int64)
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe']) data = np.random.randn(7, 4)
+Find all the values from array data where the values from array names are not equal to Will
+
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
+data = np.random.randn(7, 4)
+print(data)
+print('end')
+print(data[names !='Will'])
+[[-0.66712576  0.26820439 -0.81488631  0.5699705 ]
+ [-1.10255564  0.46954338 -0.37608995 -0.67573479]
+ [-0.14461739 -1.18530926 -2.28133014  0.46035676]
+ [ 0.32063389  1.29883063 -0.94670942  0.76457379]
+ [-0.93722619 -0.19497003 -1.07188665  0.85892243]
+ [ 1.13316275  0.09876331  1.7960207  -0.75881982]
+ [-0.74743749  0.86916478 -2.17991388  0.55232892]]
+end
+[[-0.66712576  0.26820439 -0.81488631  0.5699705 ]
+ [-1.10255564  0.46954338 -0.37608995 -0.67573479]
+ [ 0.32063389  1.29883063 -0.94670942  0.76457379]
+ [ 1.13316275  0.09876331  1.7960207  -0.75881982]
+ [-0.74743749  0.86916478 -2.17991388  0.55232892]]
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe']) data = np.random.randn(7, 4)
+Find all the values from array data where the values from array names are not equal to Will and Joe
+
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
+data = np.random.randn(7, 4)
+​
+print(data[(names != 'Will') & (names != "ali")])
+[[ 1.34855782e-03  1.01051064e+00 -5.81679578e-02  3.10599848e-01]
+ [-5.27118858e-01 -9.41262148e-01 -4.44572138e-02  7.56154521e-01]
+ [ 1.15895121e+00 -1.94854560e+00  1.05868726e+00  7.43799942e-01]
+ [-9.02598056e-02  1.36147502e-01 -2.05943221e+00 -1.44282907e+00]
+ [-1.23002231e+00  1.61495818e-01  2.29334241e+00  2.53278880e-01]]
+7
+Difficulty Level Hard
+
+Create a 2D array of shape 5x3 to contain decimal numbers between 1 and 15.
+arr2D = np.arange(1,16,dtype='float').reshape(5,3)
+arr2D
+array([[ 1.,  2.,  3.],
+       [ 4.,  5.,  6.],
+       [ 7.,  8.,  9.],
+       [10., 11., 12.],
+       [13., 14., 15.]])
+Create an array of shape (2, 2, 4) with decimal numbers between 1 to 16.
+arr3D = np.arange(1,17,dtype='float').reshape(2,2,4)
+arr4D
+​
+array([[[ 1.,  2.,  3.,  4.],
+        [ 5.,  6.,  7.,  8.]],
+
+       [[ 9., 10., 11., 12.],
+        [13., 14., 15., 16.]]])
+Swap axes of the array you created in Question 32
+arr3D = np.arange(1,17,dtype='float').reshape(2,2,4)
+​
+np.swapaxes(arr3D,1,2)
+​
+array([[[ 1.,  5.],
+        [ 2.,  6.],
+        [ 3.,  7.],
+        [ 4.,  8.]],
+
+       [[ 9., 13.],
+        [10., 14.],
+        [11., 15.],
+        [12., 16.]]])
+Create an array of size 10, and find the square root of every element in the array, if the values less than 0.5, replace them with 0
+arr1 = np.random.randn(10)
+square_arr1 = arr1 * arr1
+print(square_arr1)
+x=0
+for i in square_arr1:
+    if i<0.5:
+        square_arr1[x]=0
+    x=x+1
+square_arr1
+[1.13548339 0.88924419 0.54497614 0.11189314 0.92468961 0.098428
+ 0.1900487  2.01305858 0.44671986 0.02305315]
+array([1.13548339, 0.88924419, 0.54497614, 0.        , 0.92468961,
+       0.        , 0.        , 2.01305858, 0.        , 0.        ])
+Create two random arrays of range 12 and make an array with the maximum values between each element of the two arrays
+arr1 = np.random.randn(10)
+arr2 = np.random.randn(10)
+np.maximum(arr1,arr2)
+array([ 1.41377385,  0.28658259, -0.28525644,  0.73691244,  1.42013786,
+        0.31015827,  0.025128  , -0.03469327, -0.02898169,  0.37189727])
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
+Find the unique names and sort them out!
+
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
+np.unique(names)
+array(['Bob', 'Joe', 'Will'], dtype='<U4')
+a = np.array([1,2,3,4,5]) b = np.array([5,6,7,8,9])
+From array a remove all items present in array b
+
+a = np.array([1,2,3,4,5])
+b = np.array([5,6,7,8,9])
+a= np.setdiff1d(a,b)
+a
+array([1, 2, 3, 4])
+Following is the input NumPy array delete column two and insert following new column in its place.
+sampleArray = numpy.array([[34,43,73],[82,22,12],[53,94,66]])
+
+newColumn = numpy.array([[10,10,10]])
+
+sampleArray = np.array([[34,43,73],[82,22,12],[53,94,66]])
+print(sampleArray)
+newColumn = np.array([[10,10,10]])
+sampleArray[0,:] = newColumn
+sampleArray
+[[34 43 73]
+ [82 22 12]
+ [53 94 66]]
+array([[10, 10, 10],
+       [82, 22, 12],
+       [53, 94, 66]])
+x = np.array([[1., 2., 3.], [4., 5., 6.]]) y = np.array([[6., 23.], [-1, 7], [8, 9]])
+Find the dot product of the above two matrix
+
+x = np.array([[1., 2., 3.], [4., 5., 6.]])
+y = np.array([[6., 23.], [-1, 7], [8, 9]])
+np.dot(x,y)
+array([[ 28.,  64.],
+       [ 67., 181.]])
+Generate a matrix of 20 random values and find its cumulative sum
+rand = np.random.randn(20)
+print(rand)
+sum(rand)
+[-0.22044831 -2.37160227  1.70676204 -0.17068673 -1.59251872  0.39287957
+ -2.46635328  1.35480805  0.1729385  -0.04598592  2.6366086  -0.40628949
+  0.57844079 -2.1884192  -1.08575006 -1.0321928   0.88800683  0.76903759
+  1.13452733  2.21137563]
+0.26513813811600695
